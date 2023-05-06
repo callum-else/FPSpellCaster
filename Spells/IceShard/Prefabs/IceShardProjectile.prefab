@@ -4828,7 +4828,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 80ebd4d18974e614daa3977552ceabf1, type: 2}
+  - {fileID: 2100000, guid: 7fa2eebf74e272e4d827c10f59737fae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4942,7 +4942,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d1ec51b314ec0b844b6f1974816fe696, type: 2}
+  - {fileID: 2100000, guid: ed3ee4667786e5548bea211e0ed46e64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4999,7 +4999,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d1ec51b314ec0b844b6f1974816fe696, type: 2}
+  - {fileID: 2100000, guid: ed3ee4667786e5548bea211e0ed46e64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9856,7 +9856,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 80ebd4d18974e614daa3977552ceabf1, type: 2}
+  - {fileID: 2100000, guid: 7fa2eebf74e272e4d827c10f59737fae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14726,7 +14726,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d1ec51b314ec0b844b6f1974816fe696, type: 2}
+  - {fileID: 2100000, guid: ed3ee4667786e5548bea211e0ed46e64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14822,10 +14822,10 @@ GameObject:
   - component: {fileID: 3819444160249108193}
   - component: {fileID: 2959313337529854825}
   - component: {fileID: 4494996407211850862}
+  - component: {fileID: 6770549805068914775}
   - component: {fileID: 4962072484620421095}
   - component: {fileID: 1468271569644083674}
   - component: {fileID: 8354304715634301677}
-  - component: {fileID: 6770549805068914775}
   m_Layer: 0
   m_Name: IceShardProjectile
   m_TagString: Untagged
@@ -14879,6 +14879,28 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.125
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6770549805068914775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7075022273145129245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694f70f47f7ec0c4faca257a4c15e3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileManager: {fileID: 4962072484620421095}
+  _projectileEffectAnimator: {fileID: 8354304715634301677}
+  _projectileRigidbody: {fileID: 2959313337529854825}
+  _smokeParticles: {fileID: 4229499014273787649}
+  _iceShardTransform: {fileID: 4229499014172958845}
+  _projectileTrail: {fileID: 3131897398594377611}
+  _iceShardRenderer: {fileID: 4229499014172958843}
+  _projectileCollider: {fileID: 4494996407211850862}
+  _smokeBurstParticles: {fileID: 1501377373498249313}
+  _shardBurstParticles: {fileID: 9194515611560462067}
 --- !u!114 &4962072484620421095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14888,9 +14910,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7075022273145129245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da99f8c2f4bc7164d92d36edfc6f7705, type: 3}
+  m_Script: {fileID: 11500000, guid: 8dc065c65f72a014498cc8793d07d30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetVelocity: 20
+  _lifetimeSeconds: 10
 --- !u!114 &1468271569644083674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14900,7 +14924,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7075022273145129245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66a3e3084447ef47852e6b50ed1e99f, type: 3}
+  m_Script: {fileID: 11500000, guid: 445c1f275d9612c4e9f1d1c543a64fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8354304715634301677
@@ -14912,30 +14936,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7075022273145129245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd57dc5b05d9164abd223667b4e973e, type: 3}
+  m_Script: {fileID: 11500000, guid: c8ce2a329c0bb584ca972ccde6414179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetVelocity: 10
-  _lifetimeSeconds: 10
---- !u!114 &6770549805068914775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7075022273145129245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6781229e6b38d843be24cc65761af9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _projectileManager: {fileID: 8354304715634301677}
-  _projectileEffectAnimator: {fileID: 1468271569644083674}
-  _projectileRigidbody: {fileID: 2959313337529854825}
-  _smokeParticles: {fileID: 4229499014273787649}
-  _iceShardTransform: {fileID: 4229499014172958845}
-  _projectileTrail: {fileID: 3131897398594377611}
-  _iceShardRenderer: {fileID: 4229499014172958843}
-  _projectileCollider: {fileID: 4494996407211850862}
-  _smokeBurstParticles: {fileID: 1501377373498249313}
-  _shardBurstParticles: {fileID: 9194515611560462067}
