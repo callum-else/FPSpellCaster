@@ -1,0 +1,17 @@
+{
+    "name": "FirstPersonSpellCaster.Spells.IceShard",
+    "rootNamespace": "",
+    "references": [
+        "GUID:5264a16f0532ddb448dcdda0ba397948",
+        "GUID:abe0e0c7eec6a2b4aba9e0b8eceb5fd1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

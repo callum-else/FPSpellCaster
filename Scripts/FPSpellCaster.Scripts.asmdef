@@ -1,0 +1,21 @@
+{
+    "name": "FirstPersonSpellCaster.Scripts",
+    "rootNamespace": "",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:3de43857fc9ac454797d57c9d84ae9c2",
+        "GUID:0840db9ff5048904da052b8db64a9a1b",
+        "GUID:5264a16f0532ddb448dcdda0ba397948",
+        "GUID:abe0e0c7eec6a2b4aba9e0b8eceb5fd1",
+        "GUID:202580cd659dfe540bf271de51edb4a9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

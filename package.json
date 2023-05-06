@@ -1,0 +1,21 @@
+{
+  "name": "com.geppy.fpspellcaster",
+  "version": "0.0.1",
+  "displayName": "FP Spell Caster",
+  "description": "The deployable version of the Spell Forge package for my game project.",
+  "unity": "2021.3",
+  "unityRelease": "16f1",
+  "documentationUrl": "https://github.com/callum-else/FPSpellCaster/blob/main/README.md",
+  "changelogUrl": "https://github.com/callum-else/FPSpellCaster/commits/main",
+  "licensesUrl": "https://github.com/callum-else/FPSpellCaster/blob/main/LICENSE",
+  "dependencies": {
+    "com.unity.inputsystem": "",
+    "com.unity.postprocessing": "",
+    "com.geppy.inputeventmapper": "",
+    "com.geppy.spellforge": "",
+    "com.geppy.simplepixels": ""
+  },
+  "author": {
+    "name": "Callum Else"
+  }
+}
