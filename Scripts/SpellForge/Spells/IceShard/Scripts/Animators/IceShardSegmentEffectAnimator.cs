@@ -84,46 +84,17 @@ public class IceShardSegmentEffectAnimator : SpellEffectAnimator
     {
         var castingAnimation = new List<EffectAnimationEvent>();
 
-        var event1Duration = 0.15f;
-        var event2Duration = 0.15f;
-        var event3Duration = 0.15f;
-        var totalDuration = event1Duration + event2Duration + event3Duration;
-
-        var event1 = new EffectAnimationEvent() { DurationSeconds = event1Duration };
+        var event1 = new EffectAnimationEvent() { DurationSeconds = 0.15f };
         event1.AnimationEvent.AddListener(() => 
         {
             SetSpellRingBurstParticleRadius(_spellRing1BurstRadius);
             _spellRingBurstParticles.Play();
             _spellRing1Renderer.material.DOFade(1f, event1.DurationSeconds);
             _castingParticles.Play();
-
-            _eventAggregator.GetEvent<CameraShakeEvent>().Publish(
-                new CameraShakeEventInfo()
-                {
-                    Loops = -1,
-                    Duration = totalDuration,
-                    Strength = Vector3.one * 0.01f,
-                    Vibrato = 10
-                });
-            _eventAggregator.GetEvent<HandShakeEvent>().Publish(
-                new HandShakeEventInfo()
-                {
-                    Loops = -1,
-                    Duration = totalDuration,
-                    Strength = Vector3.one * 0.01f,
-                    Vibrato = 20,
-                });
-            _eventAggregator.GetEvent<HandRecoilEvent>().Publish(
-                new HandRecoilEventInfo()
-                {
-                    RecoilType = RecoilType.Move,
-                    Strength = 0.1f,
-                    Duration = event1Duration,
-                });
         });
         castingAnimation.Add(event1);
 
-        var event2 = new EffectAnimationEvent() { DurationSeconds = event2Duration };
+        var event2 = new EffectAnimationEvent() { DurationSeconds = 0.15f };
         event2.AnimationEvent.AddListener(() => 
         {
             SetSpellRingBurstParticleRadius(_spellRing2BurstRadius);
@@ -132,7 +103,7 @@ public class IceShardSegmentEffectAnimator : SpellEffectAnimator
         });
         castingAnimation.Add(event2);
 
-        var event3 = new EffectAnimationEvent() { DurationSeconds = event3Duration };
+        var event3 = new EffectAnimationEvent() { DurationSeconds = 0.15f };
         event3.AnimationEvent.AddListener(() => 
         {
             _projectileAnimatedComponents.SmokeParticles.Play();
@@ -166,9 +137,6 @@ public class IceShardSegmentEffectAnimator : SpellEffectAnimator
             _spellRing2Renderer.material.DOFade(0f, duration);
 
             _castingParticles.Stop();
-
-            _eventAggregator.GetEvent<CameraShakeEvent>().Publish(new CameraShakeEventInfo() { Kill = true });
-            _eventAggregator.GetEvent<HandShakeEvent>().Publish(new HandShakeEventInfo() { Kill = true });
         });
         return event1;
     }
@@ -189,16 +157,6 @@ public class IceShardSegmentEffectAnimator : SpellEffectAnimator
             _projectileAnimatedComponents.ProjectileCollider.enabled = true;
             _projectileAnimatedComponents.ProjectileRigidbody.isKinematic = false;
             _projectileAnimatedComponents.ProjectileManager.FireProjectile();
-
-            _eventAggregator.GetEvent<CameraPunchEvent>().Publish(CameraPunchEventInfo.CastingImpactPunch);
-            _eventAggregator.GetEvent<HandRecoilEvent>().Publish(
-                new HandRecoilEventInfo()
-                {
-                    RecoilType = RecoilType.Punch,
-                    Strength = 0.15f,
-                    Duration = 0.15f,
-                    ResetOnCompleted = true,
-                });
         });
         return new List<EffectAnimationEvent>() { dispurseEvent };
     }
@@ -212,13 +170,6 @@ public class IceShardSegmentEffectAnimator : SpellEffectAnimator
         cancelEvent.AnimationEvent.AddListener(() => 
         {
             _projectileAnimatedComponents.ProjectileManager.DisableProjectile();
-
-            _eventAggregator.GetEvent<HandRecoilEvent>().Publish(
-                new HandRecoilEventInfo() 
-                { 
-                    Kill = true, 
-                    Duration = 0.15f 
-                });
         });
         return new List<EffectAnimationEvent>() { cancelEvent };
     }

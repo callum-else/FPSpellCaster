@@ -22,6 +22,8 @@ public abstract class SequentialMultiSpellManager : SpellManager
     protected abstract float CastingCooldown { get; }
     protected abstract float TimeBetweenSpells { get; }
     protected abstract IEnumerator<SpellEffectAnimator> GetEnumerator();
+    protected abstract void OnFinishCast(bool hasCastables);
+    protected abstract void OnStartCast();
 
     public override void FinishCast()
     {
@@ -42,6 +44,8 @@ public abstract class SequentialMultiSpellManager : SpellManager
             var cancelled = playingAnimators.Where(xx => !xx.IsCastable);
             foreach (var animator in cancelled)
                 animator.PlayCancelCastingAnimation();
+
+            OnFinishCast(castables.Any());
         }
     }
 
@@ -55,6 +59,8 @@ public abstract class SequentialMultiSpellManager : SpellManager
                 _isAnimatorCastable = false;
                 InitialiseAnimatorAndPlay(_animatorEnumerator.Current);
                 _isCasting = true;
+
+                OnStartCast();
             }
         }
     }
