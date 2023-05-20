@@ -10,11 +10,12 @@ using UnityEngine;
 [RequireComponent(typeof(SpellContainer))]
 [RequireComponent(typeof(FPHandAnimator))]
 public class PlayerDependencies : MonoBehaviour, IPlayerInputMapperDependencies, ICameraFOVMovementEnhancerDependencies, ICameraTileMovementEnhancerDependencies, 
-    IFPMovementControllerDependencies, IFPCameraRotationControllerDependencies, IFPHandAnimatorDependencies
+    IFPMovementControllerDependencies, IFPCameraRotationControllerDependencies, IFPHandAnimatorDependencies, IFPCameraAnimatorDependencies
 {
     [Header("Child Components")]
     [SerializeField] private Camera _camera;
     [SerializeField] private Transform _cameraTransform;
+    [SerializeField] private Transform _cameraContainerTransform;
     [SerializeField] private Transform _cameraLookAtTransform;
     [SerializeField] private Transform _xAxisTransform;
     [SerializeField] private Transform _yAxisTransform;
@@ -29,6 +30,7 @@ public class PlayerDependencies : MonoBehaviour, IPlayerInputMapperDependencies,
     private FPCameraRotationController _cameraRotationController;
     private SpellContainer _spellContainer;
     private FPHandAnimator _handAnimator;
+    private UnityEventAggregator _eventAggregator;
 
     private void Awake()
     {
@@ -39,10 +41,13 @@ public class PlayerDependencies : MonoBehaviour, IPlayerInputMapperDependencies,
         _cameraRotationController = GetComponent<FPCameraRotationController>();
         _spellContainer = GetComponent<SpellContainer>();
         _handAnimator = GetComponent<FPHandAnimator>();
+
+        _eventAggregator = UnityEventAggregator.GetInstance();
     }
 
     public Camera Camera => _camera;
     public Transform CameraTransform => _cameraTransform;
+    public Transform CameraContainer => _cameraContainerTransform;
     public Transform CameraLookAtTransform => _cameraLookAtTransform;
     public Rigidbody Rigidbody => _rigidbody;
     public Transform XAxisTransform => _xAxisTransform;
@@ -56,4 +61,5 @@ public class PlayerDependencies : MonoBehaviour, IPlayerInputMapperDependencies,
     public FPHandAnimator FPHandAnimator => _handAnimator;
     public Transform HandTransform => _handTransform;
     public Transform HandContainer => _handContainerTransform;
+    public UnityEventAggregator EventAggregator => _eventAggregator;
 }

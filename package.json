@@ -12,8 +12,8 @@
     "com.unity.inputsystem": "",
     "com.unity.postprocessing": "",
     "com.geppy.inputeventmapper": "",
-    "com.geppy.spellforge": "",
-    "com.geppy.simplepixels": ""
+    "com.geppy.simplepixels": "",
+    "com.geppy.unityeventaggregator": ""
   },
   "author": {
     "name": "Callum Else"

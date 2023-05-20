@@ -1,0 +1,17 @@
+{
+    "name": "FPSpellCaster.Scripts.SpellForge",
+    "rootNamespace": "",
+    "references": [
+        "GUID:626ed258a68eb034fb1e9aa3e437794a",
+        "GUID:d1d48e03fd24f744296a3a6bd71295a8"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

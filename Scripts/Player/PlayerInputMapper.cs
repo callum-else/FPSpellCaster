@@ -10,7 +10,6 @@ public interface IPlayerInputMapperDependencies
     FPMovementController FPMovementController { get; }
     FPCameraRotationController FPCameraRotationController { get; }
     SpellContainer SpellContainer { get; }
-    FPHandAnimator FPHandAnimator { get; }
 }
 
 [RequireComponent(typeof(IPlayerInputMapperDependencies))]
@@ -57,12 +56,10 @@ public class PlayerInputMapper : InputEventMapper
         {
             case InputActionPhase.Started:
                 _dependencies.SpellContainer.StartInputPrimary();
-                _dependencies.FPHandAnimator.OnInputStart();
                 break;
 
             case InputActionPhase.Canceled:
                 _dependencies.SpellContainer.ReleaseInputPrimary();
-                _dependencies.FPHandAnimator.OnInputRelease();
                 break;
         }
     }
@@ -73,12 +70,10 @@ public class PlayerInputMapper : InputEventMapper
         {
             case InputActionPhase.Started:
                 _dependencies.SpellContainer.StartInputSecondary();
-                _dependencies.FPHandAnimator.OnInputStart();
                 break;
 
             case InputActionPhase.Canceled:
                 _dependencies.SpellContainer.ReleaseInputSecondary();
-                _dependencies.FPHandAnimator.OnInputRelease();
                 break;
         }
     }

@@ -1,0 +1,22 @@
+{
+    "name": "FPSpellCaster.Scripts.Player",
+    "rootNamespace": "",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:202580cd659dfe540bf271de51edb4a9",
+        "GUID:d1d48e03fd24f744296a3a6bd71295a8",
+        "GUID:0840db9ff5048904da052b8db64a9a1b",
+        "GUID:3de43857fc9ac454797d57c9d84ae9c2",
+        "GUID:626ed258a68eb034fb1e9aa3e437794a",
+        "GUID:b652965add31f844eb9e964543354e15"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

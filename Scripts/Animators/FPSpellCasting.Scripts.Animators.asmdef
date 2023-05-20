@@ -1,0 +1,17 @@
+{
+    "name": "FPSpellCasting.Script.Animators",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d1d48e03fd24f744296a3a6bd71295a8",
+        "GUID:f6f2cf0db3ca227468ccb98cd295e14f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
