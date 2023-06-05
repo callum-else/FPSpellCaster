@@ -333,8 +333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cursorLockMode: 1
-  _lookSensitivity: 10
-  _lookAccuracy: 1
+  _lookSensitivity: 15
+  _lookAccuracy: 0.95
   _maxLookUpAngle: 85
   _maxLookDownAngle: -85
 --- !u!114 &5030434315121255658
